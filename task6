@@ -1,0 +1,19 @@
+purchase_hash=Hash.new(0)
+sum=0
+
+loop do
+puts "Для завершения ввода введите стоп"
+stop=gets.chomp
+break if stop.include?("стоп")
+puts "Введите товар"
+product=gets.chomp
+puts "Ведите кол-во"
+amount=gets.chomp.to_f
+puts "Введите цену за единицу"
+price=gets.chomp.to_f
+sum+=amount*price
+purchase_hash[product]={amount=>price}
+end
+
+purchase_hash.each {|i,j| puts "#{i}  #{j}"}
+puts "Общая сумма покупок: #{sum}"
