@@ -7,17 +7,9 @@ year=date.slice(2).to_i
 number=day
 leap_year=false
 
-if year%4==0
-	if year%100==0
-		if year%400==0
-			leap_year==true	
-			puts "#{year} - високосный год"
-		end
-	else 
-		leap_year=true
-		puts "#{year} - високосный год"
-	end
-		
+if year%4==0 && year%400==0 || year%100!=0
+	leap_year==true	
+	puts "#{year} - високосный год"		
 end
 
 if month>1 
